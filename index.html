@@ -6,496 +6,58 @@
   <meta name="description" content="Matiwa Solutions (Pty) Ltd is a Meta-verified Tech Provider that designs and builds bespoke software, WhatsApp Business Platform solutions, cloud platforms, APIs, integrations and digital products.">
   <meta name="theme-color" content="#081d2f">
   <title>Matiwa Solutions (Pty) Ltd | Meta-Verified Tech Provider & Bespoke Software</title>
-
   <style>
-    :root {
-      --navy: #081d2f;
-      --navy-2: #102f48;
-      --blue: #1d76d2;
-      --cyan: #27b6c7;
-      --green: #25d366;
-      --ink: #172434;
-      --muted: #607080;
-      --line: #dfe7ee;
-      --soft: #f4f8fb;
-      --white: #ffffff;
-      --shadow: 0 18px 50px rgba(8, 29, 47, 0.10);
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--ink);
-      background: var(--white);
-      line-height: 1.6;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; }
-    .container { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(8, 29, 47, 0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
-    .nav-inner {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: white;
-      font-weight: 800;
-      letter-spacing: -.02em;
-    }
-    .brand-mark {
-      width: 38px;
-      height: 38px;
-      border-radius: 11px;
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      background: linear-gradient(135deg, var(--blue), var(--cyan));
-      box-shadow: 0 8px 22px rgba(29,118,210,.28);
-    }
-    .nav-links { display: flex; gap: 24px; align-items: center; color: #d7e3ec; font-size: 14px; }
-    .nav-links a:hover { color: white; }
-    .nav-cta {
-      padding: 10px 16px;
-      border: 1px solid rgba(255,255,255,.22);
-      border-radius: 999px;
-      color: white;
-      font-weight: 700;
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 86% 18%, rgba(39,182,199,.20), transparent 31%),
-        radial-gradient(circle at 12% 16%, rgba(29,118,210,.22), transparent 27%),
-        linear-gradient(145deg, #071a2b 0%, #0d2942 65%, #123750 100%);
-      color: white;
-      padding: 96px 0 86px;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: auto -10% -240px 35%;
-      height: 520px;
-      border-radius: 50%;
-      background: rgba(37,211,102,.06);
-      filter: blur(12px);
-    }
-    .hero-grid {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 56px;
-      align-items: center;
-    }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      padding: 8px 12px;
-      border: 1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.06);
-      border-radius: 999px;
-      color: #d6edf4;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: .02em;
-    }
-    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 5px rgba(37,211,102,.12); }
-    h1 {
-      margin: 22px 0 20px;
-      font-size: clamp(42px, 6vw, 72px);
-      line-height: 1.02;
-      letter-spacing: -.045em;
-      max-width: 880px;
-    }
-    .hero-copy { font-size: 19px; color: #c7d8e5; max-width: 720px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 50px;
-      padding: 0 22px;
-      border-radius: 12px;
-      font-weight: 800;
-      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
-    }
-    .btn:hover { transform: translateY(-2px); }
-    .btn-primary { background: white; color: var(--navy); box-shadow: 0 12px 30px rgba(0,0,0,.18); }
-    .btn-secondary { border: 1px solid rgba(255,255,255,.22); color: white; background: rgba(255,255,255,.04); }
-
-    .hero-card {
-      border: 1px solid rgba(255,255,255,.13);
-      background: rgba(255,255,255,.065);
-      border-radius: 24px;
-      padding: 26px;
-      box-shadow: 0 24px 70px rgba(0,0,0,.22);
-      backdrop-filter: blur(8px);
-    }
-    .hero-card h3 { margin: 0 0 8px; font-size: 22px; }
-    .hero-card p { color: #bfd0dc; margin: 0 0 20px; }
-    .cap-list { display: grid; gap: 12px; }
-    .cap-item {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      padding: 12px 0;
-      border-top: 1px solid rgba(255,255,255,.09);
-      color: #eaf2f7;
-    }
-    .cap-icon {
-      flex: 0 0 34px;
-      height: 34px;
-      border-radius: 10px;
-      display: grid;
-      place-items: center;
-      background: rgba(39,182,199,.14);
-      color: #7de0eb;
-      font-weight: 900;
-    }
-
-    .verification-bar {
-      background: #eef9f2;
-      border-bottom: 1px solid #d7eee0;
-      color: #174b2d;
-    }
-    .verification-inner {
-      min-height: 58px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      text-align: center;
-      font-size: 14px;
-    }
-    .verification-mark {
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      display: inline-grid;
-      place-items: center;
-      background: #d8f5e2;
-      color: #168344;
-      font-weight: 900;
-      flex: 0 0 auto;
-    }
-
-    section { padding: 84px 0; }
-    .section-head { max-width: 760px; margin-bottom: 38px; }
-    .kicker { color: var(--blue); font-size: 13px; font-weight: 900; text-transform: uppercase; letter-spacing: .13em; }
-    h2 { margin: 10px 0 14px; font-size: clamp(32px, 4vw, 46px); line-height: 1.1; letter-spacing: -.035em; color: var(--navy); }
-    .section-head p { color: var(--muted); font-size: 17px; margin: 0; }
-
-    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .card {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 28px;
-      box-shadow: 0 10px 34px rgba(8,29,47,.04);
-      transition: transform .18s ease, box-shadow .18s ease;
-    }
-    .card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
-    .card-icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 13px;
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      margin-bottom: 18px;
-      background: #edf6fd;
-      color: var(--blue);
-    }
-    .card h3 { margin: 0 0 10px; font-size: 20px; color: var(--navy); }
-    .card p { margin: 0; color: var(--muted); font-size: 15px; }
-
-    .whatsapp-section { background: var(--soft); }
-    .wa-panel {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 48px;
-      align-items: center;
-      padding: 44px;
-      border-radius: 28px;
-      background: linear-gradient(135deg, #09233a 0%, #0d314c 70%, #0e3a48 100%);
-      color: white;
-      box-shadow: var(--shadow);
-    }
-    .wa-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      border-radius: 999px;
-      padding: 8px 12px;
-      background: rgba(37,211,102,.11);
-      border: 1px solid rgba(37,211,102,.25);
-      color: #bdf3cf;
-      font-size: 13px;
-      font-weight: 800;
-    }
-    .wa-panel h2 { color: white; }
-    .wa-panel p { color: #c3d5df; }
-    .wa-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 13px; }
-    .wa-item {
-      padding: 16px;
-      border-radius: 14px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.09);
-      color: #edf6f8;
-      font-size: 14px;
-    }
-    .wa-item strong { display: block; color: white; margin-bottom: 4px; }
-    .fineprint { margin-top: 15px; font-size: 12px; color: #9eb5c3 !important; }
-
-    .proof { background: white; }
-    .proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-    .proof-item { padding: 24px; border-left: 3px solid var(--cyan); background: #f8fbfd; border-radius: 0 14px 14px 0; }
-    .proof-item strong { display: block; font-size: 17px; color: var(--navy); margin-bottom: 6px; }
-    .proof-item span { color: var(--muted); font-size: 14px; }
-
-    .process { background: var(--soft); }
-    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; counter-reset: step; }
-    .step { position: relative; padding: 26px; background: white; border: 1px solid var(--line); border-radius: 17px; }
-    .step::before {
-      counter-increment: step;
-      content: "0" counter(step);
-      display: block;
-      color: var(--blue);
-      font-size: 13px;
-      font-weight: 900;
-      letter-spacing: .08em;
-      margin-bottom: 25px;
-    }
-    .step h3 { margin: 0 0 9px; color: var(--navy); }
-    .step p { margin: 0; color: var(--muted); font-size: 14px; }
-
-    .cta { padding: 80px 0; }
-    .cta-box {
-      background: linear-gradient(125deg, #0c2942, #124e66);
-      color: white;
-      padding: 48px;
-      border-radius: 26px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 36px;
-    }
-    .cta-box h2 { color: white; margin-top: 0; }
-    .cta-box p { color: #c8dae4; max-width: 640px; margin-bottom: 0; }
-
-    footer { background: #061725; color: #a9bbc8; padding: 34px 0; }
-    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
-    .footer-inner strong { color: white; }
-    .footer-meta { font-size: 13px; }
-    .footer-meta a { color: #dbe8ef; }
-
-    @media (max-width: 900px) {
-      .hero-grid, .wa-panel { grid-template-columns: 1fr; }
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .proof-grid, .process-grid { grid-template-columns: repeat(2, 1fr); }
-      .hero { padding-top: 70px; }
-      .nav-links a:not(.nav-cta) { display: none; }
-    }
-
-    @media (max-width: 640px) {
-      .container { width: min(100% - 28px, 1160px); }
-      .services-grid, .proof-grid, .process-grid, .wa-list { grid-template-columns: 1fr; }
-      .hero { padding: 64px 0 58px; }
-      .hero-copy { font-size: 17px; }
-      section { padding: 62px 0; }
-      .wa-panel, .cta-box { padding: 28px; }
-      .cta-box { display: block; }
-      .cta-box .btn { margin-top: 24px; }
-      .brand span:last-child { font-size: 14px; }
-    }
+    :root{--navy:#081d2f;--navy2:#102f48;--blue:#1d76d2;--cyan:#27b6c7;--green:#25d366;--ink:#172434;--muted:#607080;--line:#dfe7ee;--soft:#f4f8fb;--white:#fff;--shadow:0 18px 50px rgba(8,29,47,.10)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.6}a{color:inherit;text-decoration:none}.container{width:min(1160px,calc(100% - 40px));margin:0 auto}
+    nav{position:sticky;top:0;z-index:50;background:rgba(8,29,47,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}.nav-inner{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;color:white;font-weight:800}.brand-mark{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;font-weight:900;background:linear-gradient(135deg,var(--blue),var(--cyan))}.nav-links{display:flex;gap:24px;align-items:center;color:#d7e3ec;font-size:14px}.nav-links a:hover{color:white}.nav-cta{padding:10px 16px;border:1px solid rgba(255,255,255,.22);border-radius:999px;color:white;font-weight:700}
+    .hero{position:relative;overflow:hidden;background:radial-gradient(circle at 86% 18%,rgba(39,182,199,.20),transparent 31%),radial-gradient(circle at 12% 16%,rgba(29,118,210,.22),transparent 27%),linear-gradient(145deg,#071a2b 0%,#0d2942 65%,#123750 100%);color:white;padding:96px 0 86px}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 12px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);border-radius:999px;color:#d6edf4;font-size:13px;font-weight:700}.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px rgba(37,211,102,.12)}h1{margin:22px 0 20px;font-size:clamp(42px,6vw,72px);line-height:1.02;letter-spacing:-.045em}.hero-copy{font-size:19px;color:#c7d8e5;max-width:720px}.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 22px;border-radius:12px;font-weight:800;border:0;cursor:pointer;font:inherit}.btn-primary{background:white;color:var(--navy);box-shadow:0 12px 30px rgba(0,0,0,.18)}.btn-secondary{border:1px solid rgba(255,255,255,.22);color:white;background:rgba(255,255,255,.04)}.hero-card{border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.065);border-radius:24px;padding:26px;box-shadow:0 24px 70px rgba(0,0,0,.22)}.hero-card h3{margin:0 0 8px;font-size:22px}.hero-card p{color:#bfd0dc}.cap-item{display:flex;gap:12px;padding:12px 0;border-top:1px solid rgba(255,255,255,.09);color:#eaf2f7}.cap-icon{flex:0 0 34px;height:34px;border-radius:10px;display:grid;place-items:center;background:rgba(39,182,199,.14);color:#7de0eb;font-weight:900}
+    .verification-bar{background:#eef9f2;border-bottom:1px solid #d7eee0;color:#174b2d}.verification-inner{min-height:58px;display:flex;align-items:center;justify-content:center;gap:12px;text-align:center;font-size:14px}.verification-mark{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:#d8f5e2;color:#168344;font-weight:900}
+    section{padding:84px 0}.section-head{max-width:760px;margin-bottom:38px}.kicker{color:var(--blue);font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.13em}h2{margin:10px 0 14px;font-size:clamp(32px,4vw,46px);line-height:1.1;letter-spacing:-.035em;color:var(--navy)}.section-head p{color:var(--muted);font-size:17px;margin:0}.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:white;border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:0 10px 34px rgba(8,29,47,.04)}.card-icon{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;font-weight:900;margin-bottom:18px;background:#edf6fd;color:var(--blue)}.card h3{margin:0 0 10px;color:var(--navy)}.card p{margin:0;color:var(--muted);font-size:15px}
+    .whatsapp-section,.process{background:var(--soft)}.wa-panel{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center;padding:44px;border-radius:28px;background:linear-gradient(135deg,#09233a 0%,#0d314c 70%,#0e3a48 100%);color:white;box-shadow:var(--shadow)}.wa-badge{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:8px 12px;background:rgba(37,211,102,.11);border:1px solid rgba(37,211,102,.25);color:#bdf3cf;font-size:13px;font-weight:800}.wa-panel h2{color:white}.wa-panel p{color:#c3d5df}.wa-list{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}.wa-item{padding:16px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);color:#edf6f8;font-size:14px}.wa-item strong{display:block;color:white;margin-bottom:4px}.fineprint{font-size:12px!important;color:#9eb5c3!important}
+    .proof-grid,.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.proof-item{padding:24px;border-left:3px solid var(--cyan);background:#f8fbfd;border-radius:0 14px 14px 0}.proof-item strong{display:block;color:var(--navy);margin-bottom:6px}.proof-item span,.step p{color:var(--muted);font-size:14px}.step{padding:26px;background:white;border:1px solid var(--line);border-radius:17px}.step h3{color:var(--navy)}
+    .contact{background:#fff}.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:42px;align-items:start}.contact-copy{padding:8px 0}.contact-copy p{color:var(--muted);font-size:17px}.contact-points{display:grid;gap:12px;margin-top:26px}.contact-point{padding:16px 18px;background:var(--soft);border-radius:14px;border:1px solid var(--line)}.contact-point strong{display:block;color:var(--navy)}.form-card{background:white;border:1px solid var(--line);border-radius:22px;padding:30px;box-shadow:var(--shadow)}.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.field{display:grid;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:13px;font-weight:800;color:var(--navy)}.field input,.field select,.field textarea{width:100%;border:1px solid #cbd8e2;border-radius:11px;padding:13px 14px;font:inherit;color:var(--ink);background:white;outline:none}.field textarea{min-height:150px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(29,118,210,.10)}.submit-btn{background:var(--navy);color:white;width:100%;margin-top:18px}.form-note{font-size:12px;color:var(--muted);margin:12px 0 0}.form-status{margin-top:14px;padding:12px 14px;border-radius:10px;display:none;font-size:14px}.form-status.success{display:block;background:#eef9f2;color:#175b34;border:1px solid #ccebd7}.form-status.error{display:block;background:#fff2f2;color:#8d2525;border:1px solid #f0cccc}.honeypot{position:absolute;left:-9999px;opacity:0;pointer-events:none}
+    footer{background:#061725;color:#a9bbc8;padding:34px 0}.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer-inner strong{color:white}.footer-meta{font-size:13px}
+    @media(max-width:900px){.hero-grid,.wa-panel,.contact-grid{grid-template-columns:1fr}.services-grid{grid-template-columns:repeat(2,1fr)}.proof-grid,.process-grid{grid-template-columns:repeat(2,1fr)}.nav-links a:not(.nav-cta){display:none}}
+    @media(max-width:640px){.container{width:min(100% - 28px,1160px)}.services-grid,.proof-grid,.process-grid,.wa-list,.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.hero{padding:64px 0 58px}section{padding:62px 0}.wa-panel,.form-card{padding:26px}}
   </style>
 </head>
 <body>
-  <nav>
-    <div class="container nav-inner">
-      <a class="brand" href="#top" aria-label="Matiwa Solutions home">
-        <span class="brand-mark">M</span>
-        <span>Matiwa Solutions</span>
-      </a>
-      <div class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#whatsapp">WhatsApp</a>
-        <a href="#approach">How we work</a>
-        <a class="nav-cta" href="mailto:info@matiwasolutions.co.za">Start a project</a>
-      </div>
-    </div>
-  </nav>
+  <nav><div class="container nav-inner"><a class="brand" href="#top"><span class="brand-mark">M</span><span>Matiwa Solutions</span></a><div class="nav-links"><a href="#services">Services</a><a href="#whatsapp">WhatsApp</a><a href="#approach">How we work</a><a class="nav-cta" href="#contact">Start a project</a></div></div></nav>
 
-  <header class="hero" id="top">
-    <div class="container hero-grid">
-      <div>
-        <span class="eyebrow"><span class="dot"></span> Meta-verified Tech Provider • South Africa</span>
-        <h1>We design technology around the way your business actually works.</h1>
-        <p class="hero-copy">
-          Matiwa Solutions (Pty) Ltd is a Meta-verified Tech Provider building bespoke software, WhatsApp Business Platform solutions, cloud platforms, APIs and integrations that turn manual processes into reliable digital services.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="mailto:info@matiwasolutions.co.za?subject=New%20Project%20Enquiry">Discuss your project</a>
-          <a class="btn btn-secondary" href="#services">Explore our capabilities</a>
-        </div>
-      </div>
+  <header class="hero" id="top"><div class="container hero-grid"><div><span class="eyebrow"><span class="dot"></span> Meta-verified Tech Provider • South Africa</span><h1>We design technology around the way your business actually works.</h1><p class="hero-copy">Matiwa Solutions (Pty) Ltd is a Meta-verified Tech Provider building bespoke software, WhatsApp Business Platform solutions, cloud platforms, APIs and integrations that turn manual processes into reliable digital services.</p><div class="hero-actions"><a class="btn btn-primary" href="#contact">Discuss your project</a><a class="btn btn-secondary" href="#services">Explore our capabilities</a></div></div><aside class="hero-card"><h3>From idea to production</h3><p>We help organisations shape, build, integrate and operate digital products that solve real business problems.</p><div class="cap-item"><span class="cap-icon">01</span><span><strong>Bespoke software</strong><br>Purpose-built web, mobile, workflow and enterprise applications.</span></div><div class="cap-item"><span class="cap-icon">02</span><span><strong>WhatsApp solutions</strong><br>Business messaging, automation, notifications and conversational journeys.</span></div><div class="cap-item"><span class="cap-icon">03</span><span><strong>Cloud & integration</strong><br>APIs, microservices, DevOps, data flows and scalable cloud architecture.</span></div></aside></div></header>
 
-      <aside class="hero-card" aria-label="Core capabilities">
-        <h3>From idea to production</h3>
-        <p>We help organisations shape, build, integrate and operate digital products that solve real business problems.</p>
-        <div class="cap-list">
-          <div class="cap-item"><span class="cap-icon">01</span><span><strong>Bespoke software</strong><br>Purpose-built web, mobile, workflow and enterprise applications.</span></div>
-          <div class="cap-item"><span class="cap-icon">02</span><span><strong>WhatsApp solutions</strong><br>Business messaging, automation, notifications and conversational journeys.</span></div>
-          <div class="cap-item"><span class="cap-icon">03</span><span><strong>Cloud & integration</strong><br>APIs, microservices, DevOps, data flows and scalable cloud architecture.</span></div>
-        </div>
-      </aside>
-    </div>
-  </header>
-
-  <div class="verification-bar" aria-label="Meta Tech Provider verification">
-    <div class="container verification-inner">
-      <span class="verification-mark">✓</span>
-      <span><strong>Verified Tech Provider:</strong> Matiwa Solutions (Pty) Ltd has successfully completed Meta's Tech Provider access verification.</span>
-    </div>
-  </div>
+  <div class="verification-bar"><div class="container verification-inner"><span class="verification-mark">✓</span><span><strong>Verified Tech Provider:</strong> Matiwa Solutions (Pty) Ltd has successfully completed Meta's Tech Provider access verification.</span></div></div>
 
   <main>
-    <section id="services">
-      <div class="container">
-        <div class="section-head">
-          <span class="kicker">What we do</span>
-          <h2>Engineering practical digital solutions from first principles.</h2>
-          <p>We combine software engineering, architecture, cloud, automation and integration expertise to deliver systems that are simple for users and sustainable for businesses.</p>
-        </div>
+    <section id="services"><div class="container"><div class="section-head"><span class="kicker">What we do</span><h2>Engineering practical digital solutions from first principles.</h2><p>We combine software engineering, architecture, cloud, automation and integration expertise to deliver systems that are simple for users and sustainable for businesses.</p></div><div class="services-grid">
+      <article class="card"><div class="card-icon">&lt;/&gt;</div><h3>Bespoke Software Development</h3><p>Custom web applications, mobile experiences, portals, internal tools, workflow systems and enterprise software designed around your exact requirements.</p></article>
+      <article class="card"><div class="card-icon">WA</div><h3>WhatsApp Business Solutions</h3><p>Customer journeys, service bots, transactional messaging, support automation and backend integrations built on the WhatsApp Business Platform.</p></article>
+      <article class="card"><div class="card-icon">API</div><h3>APIs & Systems Integration</h3><p>Secure APIs, payment integrations, CRM/ERP connectivity and integration layers that make disconnected systems work together.</p></article>
+      <article class="card"><div class="card-icon">CL</div><h3>Cloud & Platform Engineering</h3><p>Cloud architecture, container platforms, CI/CD, infrastructure automation, observability, resilience and secure production environments.</p></article>
+      <article class="card"><div class="card-icon">DX</div><h3>Digital Transformation</h3><p>We simplify manual processes, replace fragile spreadsheets and disconnected workflows, and help businesses move to measurable digital operations.</p></article>
+      <article class="card"><div class="card-icon">AR</div><h3>Architecture & Technology Advisory</h3><p>Solution architecture, technical strategy, platform governance, application modernisation and pragmatic technology decisions.</p></article>
+    </div></div></section>
 
-        <div class="services-grid">
-          <article class="card">
-            <div class="card-icon">&lt;/&gt;</div>
-            <h3>Bespoke Software Development</h3>
-            <p>Custom web applications, mobile experiences, portals, internal tools, workflow systems and enterprise software designed around your exact requirements.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon">WA</div>
-            <h3>WhatsApp Business Solutions</h3>
-            <p>Customer journeys, service bots, transactional messaging, support automation and backend integrations built on the WhatsApp Business Platform.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon">API</div>
-            <h3>APIs & Systems Integration</h3>
-            <p>Secure APIs, payment integrations, CRM/ERP connectivity, third-party services and integration layers that make disconnected systems work together.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon">CL</div>
-            <h3>Cloud & Platform Engineering</h3>
-            <p>Cloud architecture, container platforms, CI/CD, infrastructure automation, observability, resilience and secure production environments.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon">DX</div>
-            <h3>Digital Transformation</h3>
-            <p>We simplify manual processes, replace fragile spreadsheets and disconnected workflows, and help businesses move from ideas to measurable digital operations.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon">AR</div>
-            <h3>Architecture & Technology Advisory</h3>
-            <p>Solution architecture, technical strategy, platform governance, application modernisation and pragmatic technology decisions for growing organisations.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+    <section class="whatsapp-section" id="whatsapp"><div class="container"><div class="wa-panel"><div><span class="wa-badge"><span class="dot"></span> Meta-verified Tech Provider</span><h2>WhatsApp technology built for real business workflows.</h2><p>Matiwa Solutions (Pty) Ltd has been verified by Meta as a Tech Provider. We build WhatsApp Business Platform solutions that connect customer conversations to real business processes — designing the experience, engineering the application layer, integrating backend systems and supporting production delivery.</p><p class="fineprint">Tech Provider verification reflects Matiwa Solutions' verified status within Meta's developer ecosystem. WhatsApp and Meta are trademarks of their respective owners; this wording does not claim a separate Meta Business Partner designation.</p></div><div class="wa-list"><div class="wa-item"><strong>Conversational automation</strong>Guided customer journeys, service bots and self-service workflows.</div><div class="wa-item"><strong>Transactional messaging</strong>Notifications, confirmations, reminders and status updates.</div><div class="wa-item"><strong>Payments & commerce flows</strong>Connect conversations to payment, order and ledger processes.</div><div class="wa-item"><strong>CRM & support integration</strong>Route conversations and context into your business systems.</div><div class="wa-item"><strong>Webhook & API engineering</strong>Secure event handling, integrations and reliable backend services.</div><div class="wa-item"><strong>Platform onboarding support</strong>Technical setup, architecture and production-readiness guidance.</div></div></div></div></section>
 
-    <section class="whatsapp-section" id="whatsapp">
-      <div class="container">
-        <div class="wa-panel">
-          <div>
-            <span class="wa-badge"><span class="dot"></span> Meta-verified Tech Provider</span>
-            <h2>WhatsApp technology built for real business workflows.</h2>
-            <p>
-              Matiwa Solutions (Pty) Ltd has been verified by Meta as a Tech Provider. We build WhatsApp Business Platform solutions that connect customer conversations to real business processes — designing the experience, engineering the application layer, integrating backend systems and supporting production delivery.
-            </p>
-            <p class="fineprint">Tech Provider verification reflects Matiwa Solutions' verified status within Meta's developer ecosystem. WhatsApp and Meta are trademarks of their respective owners; this wording does not claim a separate Meta Business Partner designation.</p>
-          </div>
-          <div class="wa-list">
-            <div class="wa-item"><strong>Conversational automation</strong>Guided customer journeys, service bots and self-service workflows.</div>
-            <div class="wa-item"><strong>Transactional messaging</strong>Notifications, confirmations, reminders and status updates.</div>
-            <div class="wa-item"><strong>Payments & commerce flows</strong>Connect conversations to payment, order and ledger processes.</div>
-            <div class="wa-item"><strong>CRM & support integration</strong>Route conversations and context into your business systems.</div>
-            <div class="wa-item"><strong>Webhook & API engineering</strong>Secure event handling, integrations and reliable backend services.</div>
-            <div class="wa-item"><strong>Platform onboarding support</strong>Technical setup, architecture and production-readiness guidance.</div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section><div class="container"><div class="section-head"><span class="kicker">Built for business</span><h2>Not off-the-shelf software forced onto your problem.</h2></div><div class="proof-grid"><div class="proof-item"><strong>Meta-verified</strong><span>Verified as a Tech Provider within Meta's developer ecosystem.</span></div><div class="proof-item"><strong>Business-first</strong><span>We design around real workflows, not around fashionable technology.</span></div><div class="proof-item"><strong>Secure by design</strong><span>Identity, access, data protection and operational controls from the start.</span></div><div class="proof-item"><strong>Designed to scale</strong><span>Architecture and delivery choices support growth without unnecessary complexity.</span></div></div></div></section>
 
-    <section class="proof">
-      <div class="container">
-        <div class="section-head">
-          <span class="kicker">Built for business</span>
-          <h2>Not off-the-shelf software forced onto your problem.</h2>
-          <p>Our work starts with the outcome you need, the people who use the system and the constraints that matter. Technology follows from that.</p>
-        </div>
-        <div class="proof-grid">
-          <div class="proof-item"><strong>Meta-verified</strong><span>Verified as a Tech Provider within Meta's developer ecosystem.</span></div>
-          <div class="proof-item"><strong>Business-first</strong><span>We design around real workflows, not around a fashionable technology stack.</span></div>
-          <div class="proof-item"><strong>Secure by design</strong><span>Identity, access, data protection and operational controls are considered from the start.</span></div>
-          <div class="proof-item"><strong>Designed to scale</strong><span>Architecture and delivery choices support growth without unnecessary complexity.</span></div>
-        </div>
-      </div>
-    </section>
+    <section class="process" id="approach"><div class="container"><div class="section-head"><span class="kicker">How we work</span><h2>A clear path from problem to production.</h2><p>Small steps, visible progress and the fewest moving parts necessary to deliver a reliable solution.</p></div><div class="process-grid"><article class="step"><h3>Understand</h3><p>Clarify the problem, users, constraints and measurable outcome.</p></article><article class="step"><h3>Design</h3><p>Define the simplest viable architecture, journey and delivery plan.</p></article><article class="step"><h3>Build</h3><p>Develop iteratively with working software and regular validation.</p></article><article class="step"><h3>Operate</h3><p>Deploy, monitor, improve and support the platform as needs evolve.</p></article></div></div></section>
 
-    <section class="process" id="approach">
-      <div class="container">
-        <div class="section-head">
-          <span class="kicker">How we work</span>
-          <h2>A clear path from problem to production.</h2>
-          <p>Small steps, visible progress and the fewest moving parts necessary to deliver a reliable solution.</p>
-        </div>
-        <div class="process-grid">
-          <article class="step"><h3>Understand</h3><p>Clarify the business problem, users, constraints, integrations and measurable outcome.</p></article>
-          <article class="step"><h3>Design</h3><p>Define the simplest viable architecture, user journey, security model and delivery plan.</p></article>
-          <article class="step"><h3>Build</h3><p>Develop iteratively with working software, automated delivery and regular validation.</p></article>
-          <article class="step"><h3>Operate</h3><p>Deploy, monitor, improve and support the platform as usage and business needs evolve.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta" id="contact">
-      <div class="container">
-        <div class="cta-box">
-          <div>
-            <h2>Have a process that should be software?</h2>
-            <p>Tell us what your business needs to achieve. We can help shape the idea, choose the right architecture and build the solution end to end.</p>
-          </div>
-          <a class="btn btn-primary" href="mailto:info@matiwasolutions.co.za?subject=Project%20Enquiry%20-%20Matiwa%20Solutions">info@matiwasolutions.co.za</a>
-        </div>
-      </div>
-    </section>
+    <section class="contact" id="contact"><div class="container contact-grid"><div class="contact-copy"><span class="kicker">Start a conversation</span><h2>Tell us what you need to build.</h2><p>Describe the business problem, process or product you have in mind. Your enquiry will be delivered directly to Matiwa Solutions and we will respond using the email address you provide.</p><div class="contact-points"><div class="contact-point"><strong>Bespoke software</strong>Web, mobile, workflow and enterprise solutions.</div><div class="contact-point"><strong>WhatsApp Business solutions</strong>Automation, customer journeys and integrations.</div><div class="contact-point"><strong>Cloud, APIs & architecture</strong>Modernisation, integrations and scalable platforms.</div></div></div>
+      <div class="form-card"><form id="contactForm" action="https://formsubmit.co/ajax/robertmatiwa3@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Matiwa Solutions website enquiry"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="false">
+        <div class="honeypot" aria-hidden="true"><label>Leave this empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+        <div class="form-grid"><div class="field"><label for="name">Name *</label><input id="name" name="name" type="text" required autocomplete="name"></div><div class="field"><label for="email">Email *</label><input id="email" name="email" type="email" required autocomplete="email"></div><div class="field"><label for="company">Company</label><input id="company" name="company" type="text" autocomplete="organization"></div><div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div><div class="field full"><label for="service">What can we help with? *</label><select id="service" name="service" required><option value="" selected disabled>Select a service</option><option>Bespoke software development</option><option>WhatsApp Business solution</option><option>APIs & systems integration</option><option>Cloud & platform engineering</option><option>Architecture & technology advisory</option><option>Other / not sure yet</option></select></div><div class="field full"><label for="message">Tell us about your project *</label><textarea id="message" name="message" required placeholder="What are you trying to achieve, and what problem should the solution solve?"></textarea></div></div>
+        <button id="submitButton" class="btn submit-btn" type="submit">Send enquiry</button><p class="form-note">Your details are used only to respond to this enquiry.</p><div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+      </form></div></div></section>
   </main>
 
-  <footer>
-    <div class="container footer-inner">
-      <div><strong>Matiwa Solutions (Pty) Ltd</strong><div class="footer-meta">Meta-verified Tech Provider • Bespoke Software • Cloud • APIs • WhatsApp Business Solutions</div></div>
-      <div class="footer-meta">Cape Town, South Africa &nbsp;•&nbsp; <a href="mailto:info@matiwasolutions.co.za">info@matiwasolutions.co.za</a><br>&copy; 2026 Matiwa Solutions (Pty) Ltd. All rights reserved.</div>
-    </div>
-  </footer>
+  <footer><div class="container footer-inner"><div><strong>Matiwa Solutions (Pty) Ltd</strong><div class="footer-meta">Meta-verified Tech Provider • Bespoke Software • Cloud • APIs • WhatsApp Business Solutions</div></div><div class="footer-meta">Cape Town, South Africa<br>&copy; 2026 Matiwa Solutions (Pty) Ltd. All rights reserved.</div></div></footer>
+
+  <script>
+    const form=document.getElementById('contactForm');const statusBox=document.getElementById('formStatus');const submitButton=document.getElementById('submitButton');
+    form.addEventListener('submit',async(e)=>{e.preventDefault();statusBox.className='form-status';statusBox.textContent='';submitButton.disabled=true;submitButton.textContent='Sending…';try{const response=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});const data=await response.json();if(response.ok){statusBox.className='form-status success';statusBox.textContent='Thank you. Your enquiry has been sent to Matiwa Solutions.';form.reset()}else{throw new Error(data.message||'Unable to send enquiry')}}catch(err){statusBox.className='form-status error';statusBox.textContent='We could not send your enquiry right now. Please try again in a moment.'}finally{submitButton.disabled=false;submitButton.textContent='Send enquiry'}});
+  </script>
 </body>
 </html>
