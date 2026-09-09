@@ -1,0 +1,103 @@
+openapi: 3.0.3
+info:
+  title: Verification Assessment API
+  version: 1.0.0
+  description: Sanitized portfolio API illustrating regulated-platform integration patterns.
+paths:
+  /v1/assessments:
+    post:
+      summary: Create an assessment
+      parameters:
+        - in: header
+          name: Idempotency-Key
+          required: true
+          schema:
+            type: string
+        - in: header
+          name: X-Correlation-Id
+          required: false
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateAssessmentRequest'
+      responses:
+        '201':
+          description: Assessment completed synchronously
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Assessment'
+        '202':
+          description: Assessment accepted for asynchronous processing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Assessment'
+        '400':
+          description: Invalid request
+        '401':
+          description: Unauthenticated
+        '403':
+          description: Unauthorized
+  /v1/assessments/{assessmentId}:
+    get:
+      summary: Retrieve assessment status and decision
+      parameters:
+        - in: path
+          name: assessmentId
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Current assessment state
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Assessment'
+        '404':
+          description: Assessment not found
+components:
+  schemas:
+    CreateAssessmentRequest:
+      type: object
+      required: [subjectReference, assessmentType]
+      properties:
+        subjectReference:
+          type: string
+          description: Non-sensitive caller reference to the subject.
+        assessmentType:
+          type: string
+          enum: [IDENTITY_RISK, BUSINESS_RISK, TRANSACTION_RISK]
+        attributes:
+          type: object
+          additionalProperties: true
+    Assessment:
+      type: object
+      required: [assessmentId, status, correlationId]
+      properties:
+        assessmentId:
+          type: string
+          format: uuid
+        correlationId:
+          type: string
+        status:
+          type: string
+          enum: [RECEIVED, PROCESSING, APPROVED, REFERRED, DECLINED, FAILED]
+        decisionReference:
+          type: string
+          nullable: true
+        rulesetVersion:
+          type: string
+          nullable: true
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
